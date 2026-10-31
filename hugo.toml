@@ -1,0 +1,27 @@
+baseURL = "https://blog.falsafa.pro/"
+languageCode = "en-us"
+title = "Falsafa"
+theme = "zen"
+
+[author]
+  name = "Younus Raza"
+  bio = "Philosophy, literature, and the examined life"
+  github = "https://github.com/younus-raza"
+  website = "https://blog.falsafa.pro"
+
+[params]
+logo = true
+logopath = "images/logo.svg"
+logowidth = "120"
+logoheight = "120"
+description = "Notes on philosophy, literature, and the examined life."
+cookieConsent = true
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  lineNos = false
+  style = "monokai"
+  wrap = true
+
+

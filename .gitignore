@@ -1,0 +1,6 @@
+.hugo_build.lock
+public/
+resources/
+out/
+.DS_Store
+themes/zen/static/images/Screenshot*

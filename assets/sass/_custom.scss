@@ -1,0 +1,148 @@
+// Theme-wide tuning via Zen's CSS custom properties.
+// Found these in devtools under :root (_variables.scss).
+:root {
+  --base-line-height: 1.7;      // was 1.5 — the "dense paragraphs" fix
+  --max-line-width: 42rem;      // the measure; text AND figures share it
+  --fs-xxxxl: 2.25rem;          // was 3rem — tame the H1
+  --fs-xxxl: 1.75rem;           // step the scale down with it
+  --heading-line-height: 1.25;
+}
+
+.main {
+  figure {
+    margin: 2rem 0;
+    max-width: var(--max-line-width);  // follows the measure automatically
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.875rem;
+      font-style: italic;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: transparent;
+  border-bottom: 1px solid rgba(112, 104, 92, 0.16);
+  margin-bottom: 1.75rem;
+}
+
+.header__logo {
+  justify-self: start;
+}
+
+.header__logo-image {
+  width: 64px;
+  height: 64px;
+}
+
+.header__title-group {
+  display: grid;
+  gap: 0.25rem;
+  justify-self: start;
+  align-items: start;
+}
+
+.header__site-name {
+  margin: 0;
+  font-size: 2.15rem;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #0f5e63;
+}
+
+.header__site-link,
+.header__site-link:link,
+.header__site-link:visited {
+  color: #0f5e63;
+  text-decoration: none;
+}
+
+.header__subtitle {
+  margin: 0;
+  color: #8f7a52;
+  max-width: 36rem;
+  justify-self: start;
+}
+
+.list-view {
+  border-bottom: 1px solid rgba(112, 104, 92, 0.18);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.list-view:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+
+  .header__logo,
+  .header__title-group,
+  .header__region {
+    justify-self: center;
+  }
+
+  .header__region {
+    width: 100%;
+  }
+}
+
+.article-header {
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.article-header::after {
+  content: "";
+  width: 100%;
+  max-width: 23rem;
+  height: 1px;
+  background-color: #c3b593;
+  opacity: 0.85;
+}
+
+.article-header .title {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.08;
+  color: #183a3a;
+  letter-spacing: -0.02em;
+}
+
+.article-header + .article-header {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .article-header {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .article-header::after {
+    margin: 0;
+  }
+}
