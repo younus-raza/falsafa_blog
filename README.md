@@ -14,6 +14,20 @@ hugo server
 hugo --minify
 ```
 
+## Deploy to Hostinger
+
+Add `blog.falsafa.pro` in Hostinger hPanel and set its document root to
+`~/domains/blog.falsafa.pro/public_html/`. Build locally and upload the generated
+site with:
+
+```sh
+hugo --minify
+rsync -avz public/ u553285586@younusraza.tech:~/domains/blog.falsafa.pro/public_html/
+```
+
+The Hostinger domain entry, DNS record, and SSL certificate must be configured
+before the site is available at its HTTPS URL.
+
 ## Domains
 
 The canonical site URL is `https://blog.falsafa.pro/`. The other owned hostname is
