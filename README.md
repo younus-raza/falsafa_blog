@@ -22,7 +22,9 @@ site with:
 
 ```sh
 hugo --minify
-rsync -avz public/ u553285586@younusraza.tech:~/domains/blog.falsafa.pro/public_html/
+rsync -avz --exclude='.DS_Store' --exclude='images/Screenshot*' \
+	-e 'ssh -i ~/.ssh/moha0902 -o BatchMode=yes -p 65002' \
+	public/ u553285586@82.29.81.20:~/domains/blog.falsafa.pro/public_html/
 ```
 
 The Hostinger domain entry, DNS record, and SSL certificate must be configured
